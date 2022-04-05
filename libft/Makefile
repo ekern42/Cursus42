@@ -6,7 +6,7 @@
 #    By: ekern <ekern@student.42lausanne.ch>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/21 11:30:17 by ekern             #+#    #+#              #
-#    Updated: 2022/03/14 13:15:55 by ekern            ###   ########.fr        #
+#    Updated: 2022/04/05 14:33:52 by ekern            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,19 +55,20 @@ SRCS = \
 	libft_srcs/ft_split.c	\
 	libft_srcs/ft_itoa.c	\
 	libft_srcs/ft_strmapi.c	\
-	libft_srcs/ft_striteri.c	\
-	libft_srcs/ft_putchar_fd.c	\
-	libft_srcs/ft_putstr_fd.c	\
-	libft_srcs/ft_putendl_fd.c	\
-	libft_srcs/ft_putnbr_fd.c	\
-	printf/ft_printf.c			\
-	printf/fc_printf_utils.c	\
-	printf/fc_check.c			\
-	printf/fc_nbrprint.c		\
-	printf/fc_specprint.c		\
-	printf/fc_charaprint.c		\
-	gnl/get_next_line.c			\
-	gnl/get_next_line_utils.c	
+	libft_srcs/ft_striteri.c		\
+	libft_srcs/ft_putchar_fd.c		\
+	libft_srcs/ft_putstr_fd.c		\
+	libft_srcs/ft_putendl_fd.c		\
+	libft_srcs/ft_putnbr_fd.c		\
+	libft_srcs/fc_dec_to_binary.c	\
+	printf/ft_printf.c				\
+	printf/fc_printf_utils.c		\
+	printf/fc_check.c				\
+	printf/fc_nbrprint.c			\
+	printf/fc_specprint.c			\
+	printf/fc_charaprint.c			\
+	gnl/get_next_line.c				\
+	gnl/get_next_line_utils.c
 
 OBJS = ${SRCS:c=o}
 

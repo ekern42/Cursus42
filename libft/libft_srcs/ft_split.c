@@ -6,7 +6,7 @@
 /*   By: ekern <ekern@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 09:48:20 by ekern             #+#    #+#             */
-/*   Updated: 2021/11/25 15:05:37 by ekern            ###   ########.fr       */
+/*   Updated: 2022/04/05 14:29:27 by ekern            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	**ft_split(const char *src, char c)
 	if (src == NULL)
 		return (NULL);
 	nbr = fc_count_nbr_sstr(src, c);
-	dest = malloc(sizeof(char *) * (nbr + 1));
+	dest = (char **)malloc(sizeof(char *) * (nbr + 1));
 	if (dest == NULL)
 		return (NULL);
 	a = 0;
@@ -73,7 +73,7 @@ char	**ft_split(const char *src, char c)
 	dest[nbr] = NULL;
 	return (dest);
 }
-/*
+
 int	main(void)
 {
 	char	src[] = "ABCD.EFGH.IJKL.1265465654684634.9876";
@@ -87,4 +87,11 @@ int	main(void)
 		printf("%s\n", str[i]);
 		i++;
 	}
-}*/
+	i = 0;
+	while (i < 5)
+	{
+		free (str[i]);
+		i++;
+	}
+	free(str);
+}

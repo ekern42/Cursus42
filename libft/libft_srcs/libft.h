@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekern <marvin@42lausanne.ch>               +#+  +:+       +#+        */
+/*   By: ekern <ekern@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:49:05 by ekern             #+#    #+#             */
-/*   Updated: 2021/10/20 12:41:19 by ekern            ###   ########.fr       */
+/*   Updated: 2022/04/05 14:35:39 by ekern            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <ctype.h>
 # include <unistd.h>
 # include <strings.h>
+
+/* Part 1 */
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
@@ -56,5 +58,9 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *src, int fd);
 void		ft_putendl_fd(char *src, int fd);
 void		ft_putnbr_fd(int n, int fd);
+
+/* Part 3 : my functions  */
+
+int	*fc_dec_to_binary(int dec);
 
 #endif
