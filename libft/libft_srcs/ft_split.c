@@ -6,7 +6,7 @@
 /*   By: ekern <ekern@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 09:48:20 by ekern             #+#    #+#             */
-/*   Updated: 2022/04/05 14:29:27 by ekern            ###   ########.fr       */
+/*   Updated: 2022/04/05 14:42:05 by ekern            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ char	**ft_split(const char *src, char c)
 	dest[nbr] = NULL;
 	return (dest);
 }
-
+/*
 int	main(void)
 {
 	char	src[] = "ABCD.EFGH.IJKL.1265465654684634.9876";
@@ -94,4 +94,4 @@ int	main(void)
 		i++;
 	}
 	free(str);
-}
+}*/

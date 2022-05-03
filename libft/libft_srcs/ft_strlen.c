@@ -6,7 +6,7 @@
 /*   By: ekern <ekern@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 11:22:31 by ekern             #+#    #+#             */
-/*   Updated: 2022/03/17 15:17:24 by ekern            ###   ########.fr       */
+/*   Updated: 2022/04/12 15:23:43 by ekern            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ size_t	ft_strlen(const char *str)
 {
 	int	a;
 
-	a = -1;
-	while (str[++a] != '\0');
+	a = 0;
+	while (str[a] != '\0')
+		a++;
 	return (a);
 }

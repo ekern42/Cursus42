@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekern <ekern@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/11 14:03:42 by ekern             #+#    #+#             */
-/*   Updated: 2022/04/12 16:09:03 by ekern            ###   ########.fr       */
+/*   Updated: 2022/04/12 16:30:48 by ekern            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
-	int	a;
-	int	b;
-	int	c;
+	int		a;
+	long	b;
+	long	c;
 
 	a = 0;
 	b = 0;
@@ -44,6 +44,6 @@ int main(void)
 {
 	char	a[] = "      2147483649";
 	
-	printf("%d\n", ft_atoi(a));
-	printf("%d\n", atoi(a));
-}*/
+	printf("%ld\n", ft_atol(a));
+	printf("%ld\n", atol(a));
+} */

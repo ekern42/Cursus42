@@ -6,7 +6,7 @@
 /*   By: ekern <ekern@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 14:49:05 by ekern             #+#    #+#             */
-/*   Updated: 2022/04/05 14:35:39 by ekern            ###   ########.fr       */
+/*   Updated: 2022/04/12 16:31:11 by ekern            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void		ft_putnbr_fd(int n, int fd);
 
 /* Part 3 : my functions  */
 
-int	*fc_dec_to_binary(int dec);
+int			*fc_dec_to_binary(int dec);
+long		ft_atol(const char *str);
 
 #endif
