@@ -5,55 +5,50 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ekern <ekern@student.42lausanne.ch>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/09 13:40:58 by ekern             #+#    #+#              #
-#    Updated: 2022/03/24 14:42:14 by ekern            ###   ########.fr        #
+#    Created: 2022/05/17 11:19:49 by ekern             #+#    #+#              #
+#    Updated: 2022/05/20 15:53:16 by ekern            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SO_LONG = so_long
-NAME = $(SO_LONG)
+SERVER = server
+CLIENT = client
 
 CC = gcc
-CFLAGS = -Werror -Wextra -Wall
+CFLAGS = -Werror -Wall -Wextra
 
-MLXFLAGS	 = -Lmlx -lmlx -framework AppKit -framework OpenGL
-
-INCLUDES	 = srcs/so_long.h
+INCLUDES = srcs/minitalk.h
 
 LIBFT = libft.a
 LIBFT_DIR = libft
 LIBFT_FILE = $(LIBFT_DIR)/$(LIBFT)
 
-MLX = libmlx.a
-MLX_DIR = mlx
-MLX_FILE = $(MLX_DIR)/$(MLX)
-
 SRCS = \
-	srcs/so_long.c					\
-	srcs/check_error.c				\
-	srcs/map_init.c					\
-	srcs/input.c					\
-	srcs/movement.c
- 
+	srcs/server.c \
+	srcs/client.c
+
 OBJS = ${SRCS:c=o}
 
-all : $(LIBFT_FILE) $(MLX_FILE) $(NAME)
-	
-$(SO_LONG) : $(OBJS)
-	$(CC) $(CFLAGS) $(MLXFLAGS) $(LIBFT_FILE) $^ -o $(NAME)
+all : $(LIBFT) $(SERVER) $(CLIENT)
+
+$(SERVER) : $(OBJS)
+	$(CC) $(CFLAGS) $(LIBFT_FILE) srcs/server.c -o $@
+
+$(CLIENT) : $(OBJS)
+	$(CC) $(CFLAGS) $(LIBFT_FILE) srcs/client.c -o $@
 
 srcs/%.o : %.c $(INCLUDES)
 	$(CC) $(CFLAGS) -c $<
-
+	
 clean :
 	@rm -f $(OBJS)
 
 fclean : clean
-	@rm -f $(NAME)
+	@rm -f client
+	@rm -f server
 
-big_clean : fclean $(LIBFT)_fclean $(MLX)_clean
+big_clean : fclean $(LIBFT_FILE)_fclean
 
-re : fclean all
+re : big_clean all
 
 # Libft
 
@@ -62,17 +57,7 @@ $(LIBFT) : $(LIBFT_FILE)
 $(LIBFT_FILE) :
 	@make --no-print-directory -C $(LIBFT_DIR)
 
-$(LIBFT)_fclean :
+$(LIBFT_FILE)_fclean :
 	@make --no-print-directory -C $(LIBFT_DIR) fclean
-	
-# Mlx
 
-$(MLX) : $(MLX_FILE)
-
-$(MLX_FILE) :
-	@make --no-print-directory -C $(MLX_DIR)
-
-$(MLX)_clean :
-	@make --no-print-directory -C $(MLX_DIR) clean
-	
-.PHONY : all clean fclean big_clean re
+.PHONY : all clean fclean big_clean re 
