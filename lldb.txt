@@ -1,0 +1,9 @@
+-fsanitize=address permet de trouver d'ou vient le segfault sur mac
+demande -g3 dans les flags
+
+lldb ./programm			/* lance le debugger */
+b fonction 				/* Breakpoint, faire le detail de la fonction */
+run						/* lance le programme dans le debugger */
+n						/* execute la ligne suivante */
+p						/* permet de voir le contenu d'une variable */
+
